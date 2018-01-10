@@ -8,9 +8,15 @@
 @import './base/typography';
 @import './base/root';
 
+@import'./layouts/header';
+@import'./layouts/asidemenu.scss';
+@import'./layouts/bgtitle.scss';
+@import'./layouts/modalmarket.scss';
+
 @import './components/main';
 @import './components/wrapper';
 @import './components/grid';
 @import './components/navigation';
 @import './components/promotion';
 @import './components/footer';
+
