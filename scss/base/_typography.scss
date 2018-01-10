@@ -1,0 +1,11 @@
+@include font-face("Fjalla One", ("FjallaOne-Regular.ttf"));
+@include font-face("Roboto Light", ("Roboto-Light.ttf"), 300);
+
+%font-Fjalla-One {
+    font-family: "Fjalla One", Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+%font-Roboto-Light {
+    font-family: "Roboto Light", Arial, sans-serif;
+}

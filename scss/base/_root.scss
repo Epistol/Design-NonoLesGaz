@@ -1,0 +1,8 @@
+html,
+body {
+    height: 100%;
+    position: relative;
+    font-size: $fontSize;
+    @extend %font-Roboto-Light;
+    color: $colorWhite;
+}

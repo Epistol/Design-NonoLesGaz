@@ -1,0 +1,32 @@
+@function getFormat($file) {
+    $list: str-split($file, '.');
+    $format: nth($list, 2);
+
+    @if ($format == 'ttf') {
+        @return 'truetype';
+    } @elseif ($format == 'otf') {
+        @return 'opentype';
+    } @elseif ($format == 'eot') {
+        @return 'embedded-opentype';
+    } @elseif (str-index($format, 'svg#')) {
+        @return 'svg';
+    } @else {
+        @return $format;
+    }
+}
+
+@function str-split($str, $separator) {
+    $list: ();
+    $i : str-index($str, $separator);
+
+    @while $i != null {
+        $item: str-slice($str, 1, $i - 1);
+        $list: append($list, $item);
+        $str: str-slice($str, $i + 1);
+        $i : str-index($str, $separator);
+    }
+
+    $list: append($list, $str);
+
+    @return $list;
+}

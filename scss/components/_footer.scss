@@ -1,0 +1,43 @@
+.footer {
+    text-align: right;
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        font-size: 0;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: inline;
+        font-size: 1rem;
+        margin-top: 10px;
+
+        & + & {
+            margin-left: 20px;
+        }
+    }
+
+    &__link {
+        color: $colorWhite;
+        text-decoration: none;
+    }
+
+    @include media-max($bpTablet) {
+        text-align: center;
+
+        &__list {
+            justify-content: center;
+        }
+
+        &__item {
+            margin-right:  20px;
+
+            & + & {
+                margin-left: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+//eot,woff2,woff,otf,ttf,svg
+@mixin font-face($name, $files, $weight: normal, $style: normal) {
+    $src: '';
+
+    $listLength: length($files);
+
+    @font-face {
+
+        @each $file in $files {
+            $format: getFormat($file);
+            $IEfix: $file;
+
+            @if ($format == 'embedded-opentype') {
+                $IEfix: '#{$IEfix}?';
+            }
+
+            $src: '#{$src}url("../fonts/#{$IEfix}") format("#{$format}")';
+
+            @if (index($files, $file) < $listLength) {
+                $src: '#{$src}, ';
+            }
+        }
+
+        font-family: $name;
+        src: unquote($src);
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+@mixin media-min($val) {
+    @media screen and (min-device-width: $val) {
+        @content;
+    }
+}
+
+@mixin media-max($val) {
+    @media screen and (max-device-width: $val - 1) {
+        @content;
+    }
+}
+
+@mixin IE10 {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        @content;
+    }
+}
+
+@mixin IE11 {
+    @include IE10 {
+        _:-ms-fullscreen, :root & {
+            @content;
+        }
+    }
+}
