@@ -1,0 +1,16 @@
+.bg-title{
+    position: absolute;
+    text-align: center;
+    width: 90%;
+    height: 100vh;
+    z-index: 0;
+    padding-left: 10%;
+
+    h2{
+        color: $colorWhite;
+        opacity: 0.2;
+        font-family: Fjalla One, sans-serif;        
+        font-size: 14em;
+    }
+
+}

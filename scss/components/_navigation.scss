@@ -1,7 +1,7 @@
 .navigation {
     $parent: &;
 
-    @extend %font-Fjalla-One;
+    @extend %font-Fjalla-One !optional;
     font-size: 1.75rem;
     width: 245px;
     overflow: hidden;

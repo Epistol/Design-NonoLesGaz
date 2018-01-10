@@ -1,0 +1,125 @@
+header
+{
+
+    
+    margin: 20px 50px;
+    font-family: Fjalla One, sans-serif;
+
+    .header-first-block
+    {
+        display: flex;
+        justify-content: space-between;
+
+        .header-logo
+        {
+            img{
+                width: 200px;
+                height: auto;
+            }
+        }
+        .header-shop{
+            display: flex;
+            justify-content: space-around;
+            
+            .shopping{
+                position: relative;
+                height: 50px;
+                width: 50px;
+
+                &:hover{
+                    cursor: pointer;
+
+                    svg{
+                        fill: $colorBlue; /* Old browsers */
+                    }
+                }
+            }
+
+            svg
+            {
+                height: 50px;
+                width: auto;
+
+                &.shopping-img{
+                    position: absolute;
+                    top: 50%; /* poussé de la moitié de hauteur du référent */
+                    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+                    pointer-events: none;
+                }
+            }
+            span.separator
+            {
+                margin: 0 20px;
+                display: inline-block;
+                height: 100%;
+                width: 2px;
+                background-color: $colorWhite;
+            }
+            span.shop-number{
+                position: absolute;
+                background: $colorBlue; /* Old browsers */
+                background: -moz-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, $colorBlue 0%, $colorBlueLight 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorBlue', endColorstr='$colorBlueLight',GradientType=0 ); /* IE6-9 */
+                width: 20px;
+                height: 20px;
+                top: 0;
+                right: 0;
+                text-align: center;
+                border-radius: 50%;
+                padding: 2px;
+                box-shadow: 0px 0px 2em $colorBlue;
+                pointer-events: none;
+            }
+        }
+    }
+    
+    .header-menu
+    {
+        ul
+        {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding: 0;
+            font-size: 25px;
+
+            li
+            {
+                list-style-type: none;
+                padding: 5px 20px;
+                border-radius: 5px;
+
+                &.active-menu{
+                    background: $colorBlue; /* Old browsers */
+                    background: -moz-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to bottom, $colorBlue 0%, $colorBlueLight 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorBlue', endColorstr='$colorBlueLight',GradientType=0 ); /* IE6-9 */  
+                    
+                    a{
+                        color: $colorBlueDarker;
+                    }
+                }
+
+                a
+                {
+                    color: $colorWhite;
+                    text-decoration: none;                    
+
+                    &.color-blue{
+                        color: $colorBlueLight;
+                    }
+
+                    &:hover
+                    {
+                        color: $colorBlue;
+                    }
+                }
+            }
+        }
+    }
+}

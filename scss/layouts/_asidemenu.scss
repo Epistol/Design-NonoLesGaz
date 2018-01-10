@@ -1,0 +1,24 @@
+.aside-menu
+{
+    
+    background: $colorBlue; /* Old browsers */
+    background: -moz-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $colorBlue 0%, $colorBlueLight 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorBlue', endColorstr='$colorBlueLight',GradientType=0 ); /* IE6-9 */
+    width: 15vw;
+    height: 35vh;
+    margin: 50px;
+    border-radius: 10px;
+    color: $colorBlueDarker; 
+    overflow: hidden;     
+    z-index: 10;     
+     
+    h2{
+        font-family: Fjalla One, sans-serif;
+        display: block;
+        padding: 0; 
+        margin: -5px;
+        font-size: 2.2em;
+    }
+}
