@@ -1,6 +1,6 @@
 .aside-menu
 {
-    
+    display: inline-block;
     background: $colorBlue; /* Old browsers */
     background: -moz-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* Chrome10-25,Safari5.1-6 */
@@ -20,5 +20,12 @@
         padding: 0; 
         margin: -5px;
         font-size: 2.2em;
+    }
+
+    ul
+    {
+        li{
+            list-style-type: none;
+        }
     }
 }

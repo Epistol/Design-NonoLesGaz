@@ -1,7 +1,7 @@
 .navigation {
     $parent: &;
 
-    @extend %font-Fjalla-One !optional;
+    font-family: Fjalla One, sans-serif;
     font-size: 1.75rem;
     width: 245px;
     overflow: hidden;
@@ -57,6 +57,10 @@
         display: inline;
         text-decoration: none;
         color: $colorWhite;
+
+        &:hover{
+            color: $colorBlueLight;
+        }
     }
 
     @include media-max($bpTablet) {
