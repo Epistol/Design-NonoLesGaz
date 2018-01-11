@@ -1,7 +1,7 @@
 .main {
     position: relative;
     min-height: 100%;
-    padding: 50px 80px;
+    padding: 20px 40px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -29,6 +29,12 @@
     &::after {
         background: url("#{$rootImages}waves.svg") no-repeat bottom center;
         background-size: contain;
+    }
+
+    &--shop{
+        &::after {
+            display: none;
+        }
     }
 
     @include media-max($bpMobile) {

@@ -15,3 +15,23 @@
         width: auto;
     }
 }
+
+.grid-shop{
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+
+    &__column{
+        display: inline-block;
+        font-size: 1rem;
+    }
+
+    &__aside{
+        width: 25%;
+        vertical-align: top;
+    }
+
+    &__list-shop{
+        width: 75%;
+    }
+}

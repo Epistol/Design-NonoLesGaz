@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -504,9 +503,7 @@ header .header-first-block .header-shop svg {
 header .header-first-block .header-shop svg.shopping-img {
   position: absolute;
   top: 50%;
-  /* poussé de la moitié de hauteur du référent */
   transform: translateY(-50%);
-  /* tiré de la moitié de sa propre hauteur */
   pointer-events: none;
 }
 
@@ -588,6 +585,7 @@ header .header-menu ul li a:hover {
 }
 
 .aside-menu {
+  display: inline-block;
   background: #22628d;
   /* Old browsers */
   background: -moz-linear-gradient(top, #22628d 0%, #3498db 100%);
@@ -613,6 +611,10 @@ header .header-menu ul li a:hover {
   padding: 0;
   margin: -5px;
   font-size: 2.2em;
+}
+
+.aside-menu ul li {
+  list-style-type: none;
 }
 
 .bg-title {
@@ -643,9 +645,11 @@ header .header-menu ul li a:hover {
   background: rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   margin: auto;
-  border-image: linear-gradient(to bottom, #258dc8 0%, #000000 100%);
-  -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(#258dc8), to(#000000)) 1 100%;
-  -webkit-border-image: -webkit-linear-gradient(top, #258dc8 0%, #000000 100%);
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top left, #000 50%, #22628d 100%);
+  -webkit-border-image: -webkit-linear-gradient(top left, #000 50%, #22628d 100%);
+  border-image: linear-gradient(to top right, #000 50%, #22628d 100%);
+  border-image-slice: 1;
 }
 
 .modal-market::after {
@@ -679,10 +683,102 @@ header .header-menu ul li a:hover {
   font-family: Fjalla One, sans-serif;
 }
 
+.list-shop {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+
+.list-shop .list-object {
+  position: relative;
+  display: inline-block;
+  width: 15%;
+  background: linear-gradient(to top right, #000 50%, #22628d 100%);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.list-shop .list-object div {
+  background: black;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 2px;
+  z-index: 0;
+  transition: background ease 0.3s;
+}
+
+.list-shop .list-object img {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+.list-shop .list-object h3 {
+  font-family: Fjalla One, sans-serif;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.list-shop .list-object h5 {
+  font-size: 1.5em;
+  color: #22628d;
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  z-index: 1;
+  position: relative;
+}
+
+.list-shop .list-object p {
+  z-index: 1;
+  position: relative;
+}
+
+.list-shop .list-object a {
+  display: block;
+  text-align: center;
+  font-family: Fjalla One, sans-serif;
+  background: #22628d;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #22628d 0%, #3498db 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #22628d 0%, #3498db 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #22628d 0%, #3498db 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorBlue', endColorstr='$colorBlueLight',GradientType=0 );
+  /* IE6-9 */
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.5em;
+  z-index: 1;
+  position: relative;
+}
+
+.list-shop .list-object a:hover {
+  background: #0b1f2d;
+}
+
+.list-shop .list-object a:hover + div {
+  background: #3498db;
+}
+
 .main {
   position: relative;
   min-height: 100%;
-  padding: 50px 80px;
+  padding: 20px 40px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -707,6 +803,10 @@ header .header-menu ul li a:hover {
 .main::after {
   background: url("../img/waves.svg") no-repeat bottom center;
   background-size: contain;
+}
+
+.main--shop::after {
+  display: none;
 }
 
 @media screen and (max-device-width: 639px) {
@@ -744,7 +844,28 @@ header .header-menu ul li a:hover {
   }
 }
 
+.grid-shop {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+}
+
+.grid-shop__column {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.grid-shop__aside {
+  width: 25%;
+  vertical-align: top;
+}
+
+.grid-shop__list-shop {
+  width: 75%;
+}
+
 .navigation {
+  font-family: Fjalla One, sans-serif;
   font-size: 1.75rem;
   width: 245px;
   overflow: hidden;
@@ -801,6 +922,10 @@ header .header-menu ul li a:hover {
   display: inline;
   text-decoration: none;
   color: white;
+}
+
+.navigation__link:hover {
+  color: #3498db;
 }
 
 @media screen and (max-device-width: 979px) {
@@ -888,6 +1013,7 @@ header .header-menu ul li a:hover {
 .promotion__title {
   position: relative;
   z-index: 1;
+  font-family: Fjalla One, sans-serif;
   font-size: 2.5rem;
   margin: 0;
 }
@@ -923,6 +1049,7 @@ header .header-menu ul li a:hover {
 }
 
 .promotion__price {
+  font-family: Fjalla One, sans-serif;
   font-size: 3.75rem;
   color: #3498db;
   margin: 15px 0 40px 20px;

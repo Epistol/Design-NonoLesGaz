@@ -1,0 +1,84 @@
+.list-shop{
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+
+    .list-object{
+        position: relative;
+        display: inline-block;
+        width: 15%;
+        background: linear-gradient(to top right, #000 50%, $colorBlue 100%);        
+        border-radius: 10px;
+        padding: 40px;
+        margin: 20px;
+        overflow: hidden;
+        
+
+        div{
+            background: black;
+            position: absolute;
+            border-radius: 10px;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: 2px;
+            z-index: 0;
+            transition: background ease 0.3s;            
+        }
+
+        img{
+            width: 100%;
+            z-index: 1;    
+            position: relative;        
+        }
+        h3{
+            font-family: Fjalla One, sans-serif;
+            font-size: 2em;
+            margin: 0;
+            padding: 0;   
+            z-index: 1;    
+            position: relative;
+        }
+        h5{
+            font-size: 1.5em;
+            color: $colorBlue;
+            margin: 0;
+            padding: 0;
+            font-weight: 100;
+            z-index: 1;    
+            position: relative;
+        }
+        p{
+            z-index: 1;    
+            position: relative;
+        }
+        a{
+            display: block;
+            text-align: center;
+            font-family: Fjalla One, sans-serif;
+            background: $colorBlue; /* Old browsers */
+            background: -moz-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, $colorBlue 0%, $colorBlueLight 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, $colorBlue 0%, $colorBlueLight 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorBlue', endColorstr='$colorBlueLight',GradientType=0 ); /* IE6-9 */  
+            text-decoration: none;
+            color: white;
+            width: 100%;
+            border-radius: 10px;  
+            padding: 10px;
+            font-size: 1.5em;       
+            z-index: 1;    
+            position: relative;
+            
+            &:hover{
+                background: $colorBlueDark;
+            }
+
+            &:hover + div{
+                background: $colorBlueLight;
+            }
+            
+        }
+    }
+}

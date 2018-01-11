@@ -48,7 +48,7 @@
     &__title {
         position: relative;
         z-index: 1;
-        //@extend %font-Fjalla-One;
+        font-family: Fjalla One, sans-serif;
         font-size: 2.5rem;
         margin: 0;
     }
@@ -85,7 +85,7 @@
     }
 
     &__price {
-        //@extend %font-Fjalla-One;
+        font-family: Fjalla One, sans-serif;
         font-size: 3.75rem;
         color: $colorBlueLight;
         margin: 15px 0 40px 20px;

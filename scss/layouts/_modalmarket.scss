@@ -10,9 +10,11 @@
     background: rgba(0,0,0,0.9);
     border-radius: 10px;
     margin: auto;
-    border-image: linear-gradient(to bottom, #258dc8 0%,#000000 100%);
-    -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(#258dc8), to(#000000)) 1 100%;
-    -webkit-border-image: -webkit-linear-gradient(top, #258dc8 0%,#000000 100%);
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top left, #000 50%, $colorBlue 100%);
+    -webkit-border-image: -webkit-linear-gradient(top left, #000 50%, $colorBlue 100%);
+    border-image: linear-gradient(to top right, #000 50%, $colorBlue 100%);
+    border-image-slice: 1;
 
     &::after{
         content:'';
